@@ -23,7 +23,7 @@ li {
 	margin: 0;
 	text-align: center;
 }
-@media (min-width: 600px) {
+@media (min-width: 768px) {
 	img {
 		margin-left: 0.5em;
 	}
@@ -31,13 +31,11 @@ li {
 		flex-direction: row;
 		justify-content: space-between;
 		padding: 0.5em 0 0.5em 0;
-		border: blue solid 1px;
 	}
 	.nav-list {
 		display: flex;
 		flex-direction: row;
 		margin-right: 1.5em;
-		border: magenta solid 1px;
 	}
 	li {
 		padding: 0 1em;
