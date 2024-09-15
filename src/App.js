@@ -1,12 +1,22 @@
 import "./styling/Header.css";
 import "./styling/App.css";
+import "./styling/Main.css";
 import Header from "./components/Header.jsx";
+import Main from "./components/Main.jsx";
+import Quote from "./components/Quote.jsx";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
 	return (
-		<div className="App">
-			<Header />
-		</div>
+		<Router>
+			<div className="App">
+				<Header />
+				<Routes>
+					<Route exact path="/" element={<Main />} />
+					<Route path="/quote" element={<Quote />} />
+				</Routes>
+			</div>
+		</Router>
 	);
 }
 

@@ -1,0 +1,29 @@
+/* --------------- layout --------------- */
+
+.main-quote-content {
+	display: flex;
+	align-items: center;
+	border: pink solid 3px;
+	min-height: 70vh;
+}
+.quote-form {
+	display: flex;
+	flex-direction: column;
+	border: purple solid 1px;
+	width: 80%;
+	margin: 0 auto;
+}
+form > input {
+	width: 80%;
+	margin: 0 auto 1em auto;
+}
+
+/* -------------------------------------------------- */
+
+/* --------------- Styling/Typography --------------- */
+
+form > label {
+	color: #4a4a4a;
+}
+
+/* -------------------------------------------------- */

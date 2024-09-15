@@ -1,6 +1,7 @@
-import "/Users/lucas/Documents/mooserestoration/src/styling/Header.css";
+import "../styling/Header.css";
+import { Link } from "react-router-dom";
 import React from "react";
-import logo from "/Users/lucas/Documents/mooserestoration/src/pictures/mooserestorationslogo.png";
+import logo from "../pictures/mooserestorationslogo.png";
 
 function Header() {
 	return (
@@ -11,16 +12,16 @@ function Header() {
 						<img src={logo} alt="Logo" className="logo"></img>
 						<ul className="nav-list">
 							<li className="nav-list-home">
-								<a href="#">HOME</a>
+								<Link to="/">HOME</Link>
 							</li>
 							<li className="nav-list-about">
-								<a href="#">ABOUT US</a>
+								<Link to="/">ABOUT US</Link>
 							</li>
 							<li className="nav-list-reviews">
-								<a href="#">REVIEWS</a>
+								<Link to="/">REVIEWS</Link>
 							</li>
 							<li className="nav-list-quote">
-								<a href="#">QUOTE</a>
+								<Link to="/quote">QUOTE</Link>
 							</li>
 						</ul>
 					</nav>
