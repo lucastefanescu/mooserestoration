@@ -13,8 +13,8 @@
 	width: 80%;
 	margin: 0 auto;
 }
-form > input {
-	width: 80%;
+.container > input {
+	width: 100%;
 	margin: 0 auto 1em auto;
 }
 
@@ -22,7 +22,7 @@ form > input {
 
 /* --------------- Styling/Typography --------------- */
 
-form > label {
+.container > label {
 	color: #4a4a4a;
 }
 
