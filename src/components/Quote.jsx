@@ -10,9 +10,9 @@ function Quote() {
 						<input type="Name" id="name"></input>
 						<label htmlFor="email">Email</label>
 						<input type="email" id="email"></input>
-						<label htmlFor="phone-number">Phone number</label>
+						<label htmlFor="phone-number">Phone Number</label>
 						<input type="tel" id="phone-number"></input>
-						<label htmlFor="description">Description</label>
+						<label htmlFor="description">Job Description</label>
 						<input type="text" id="description"></input>
 						<button className="btn">SUBMIT</button>
 					</div>
