@@ -14,8 +14,7 @@ function Quote() {
 						<input type="tel" id="phone-number"></input>
 						<label htmlFor="description">Description</label>
 						<input type="text" id="description"></input>
-						<label htmlFor="photos">Photos</label>
-						<input type="file" id="photos" multiple></input>
+						<button className="btn">SUBMIT</button>
 					</div>
 				</form>
 			</div>

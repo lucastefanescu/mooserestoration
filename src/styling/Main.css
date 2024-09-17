@@ -11,15 +11,15 @@
 	display: flex;
 	flex-direction: column;
 }
-h2 {
+.main-content > h2 {
 	margin-top: 0;
 }
-h1 {
+.main-content > h1 {
 	padding-top: 1em;
 	margin-top: 0;
 	margin-bottom: 0;
 }
-p {
+.main-content > p {
 	margin: auto;
 	padding: 0 3em;
 }
@@ -33,33 +33,33 @@ p {
 	.main-content {
 		min-height: 90vh;
 	}
-	h1 {
+	.main-content > h1 {
 		margin-left: 1.4em;
 		padding-bottom: 0.5em;
 	}
-	h2 {
+	.main-content > h2 {
 		padding: 0.8em 0 0.8em 0;
 		margin: 0 0 0 3em;
 	}
-	p {
+	.main-content > p {
 		padding: 1em 3em;
 		margin-top: 0;
 	}
 }
 @media (min-width: 1250px) {
-	h1 {
+	.main-content > h1 {
 		margin: 0 0 0 0.8em;
 		padding: 0.4em 0;
 		letter-spacing: 1px;
 	}
-	h2 {
+	.main-content > h2 {
 		padding: 0.5em 0 1em 0;
 		margin: 0 0 0 1.7em;
 	}
 	.main-content {
 		min-height: 90vh;
 	}
-	p {
+	.main-content > p {
 		margin: 0;
 		padding: 0.5em;
 		max-width: 1200px;
@@ -67,22 +67,22 @@ p {
 	}
 }
 /* --------------- Styling/Typography --------------- */
-h1 ~ *,
-p {
+.main-content > h1 ~ *,
+.main-content > p {
 	color: #ffffff;
 }
-h1,
-h2 {
+.main-content > h1,
+.main-content > h2 {
 	text-align: center;
 }
 
-h1 {
+.main-content > h1 {
 	font-family: "Montserrat", sans-serif;
 	font-size: 1.875rem;
 	font-weight: 500;
 	color: #f57f2a;
 }
-h2 {
+.main-content > h2 {
 	font-family: "Roboto", sans-serif;
 	font-weight: 300;
 	font-size: 1rem;
@@ -93,49 +93,49 @@ h2 {
 	background-position: bottom left;
 	background-size: cover;
 }
-p {
+.main-content > p {
 	font-size: 1rem;
 	font-family: "Roboto", sans-serif;
 	font-weight: 200;
 }
 @media (min-width: 1250px) {
-	h1,
-	h2 {
+	.main-content > h1,
+	.main-content > h2 {
 		text-align: left;
 	}
-	h1 {
+	.main-content > h1 {
 		font-size: 6rem;
 	}
-	h2 {
+	.main-content > h2 {
 		font-size: 3rem;
 	}
-	p {
+	.main-content > p {
 		font-size: 1.875rem;
 	}
 }
 @media (min-width: 945px) and (max-width: 1250px) {
-	h1,
-	h2 {
+	.main-content > h1,
+	.main-content > h2 {
 		text-align: left;
 	}
-	h1 {
+	.main-content > h1 {
 		font-size: 4rem;
 	}
-	h2 {
+	.main-content > h2 {
 		font-size: 2rem;
 	}
-	p {
+	.main-content > p {
 		font-size: 2rem;
 	}
 }
 @media (min-width: 768px) and (max-width: 945px) {
-	h1 {
+	.main-content > h1 {
 		font-size: 3em;
 	}
-	h2 {
+	.main-content > h2 {
 		font-size: 1.5em;
 	}
-	p {
+	.main-content > p {
 		font-size: 1.5em;
 	}
 }

@@ -1,29 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/*
+	TODO: understand how to center properly
+*/
+
 /* --------------- layout --------------- */
+.container > h1 {
+	padding: 0;
+	text-align: left;
+}
+.container {
+	max-width: 800px;
+	padding: 2em;
+	margin: 0 auto;
+	border: solid pink 1px;
+}
 
 .main-quote-content {
 	display: flex;
 	align-items: center;
-	border: pink solid 3px;
+	justify-content: center;
 	min-height: 70vh;
+	border: 1px solid blue;
 }
 .quote-form {
 	display: flex;
 	flex-direction: column;
-	border: purple solid 1px;
 	width: 80%;
-	margin: 0 auto;
+	/* margin: 0 auto; */
 }
 .container > input {
 	width: 100%;
-	margin: 0 auto 1em auto;
+	margin: 0 auto 1.5em auto;
+}
+.btn {
+	margin: 1em auto;
 }
 
 /* -------------------------------------------------- */
 
 /* --------------- Styling/Typography --------------- */
-
+.container > h1 {
+	font-weight: 700;
+	font-size: 1.5rem;
+	font-family: "Montserrat", sans-serif;
+}
+.container {
+	box-shadow: 0px 4px 40px #4a4a4a;
+	border-radius: 40px;
+}
+.container > input {
+	border: solid 1.5px #4a4a4a;
+	border-radius: 4px;
+	box-shadow: 0px 1px 0px #2a2a2a;
+	padding: 0.25em;
+}
 .container > label {
 	color: #4a4a4a;
+	font-family: "Roboto", sans-serif;
+}
+.btn {
+	display: block;
+	border: 0;
+	background-color: #f57f2a;
+	font-family: "Montserrat", sans-serif;
+	padding: 1em 2em;
+	border-radius: 20px;
+	letter-spacing: 0.5px;
+	color: #ffff;
+	cursor: pointer;
+	transform: scale(1);
+	transition: transform 250ms;
+}
+.btn:focus,
+.btn:hover {
+	transform: scale(1.1);
 }
 
 /* -------------------------------------------------- */
