@@ -10,7 +10,6 @@
 	max-width: 800px;
 	padding: 2em;
 	margin: 0 auto;
-	border: solid pink 1px;
 }
 
 .main-quote-content {
@@ -18,7 +17,6 @@
 	align-items: center;
 	justify-content: center;
 	min-height: 70vh;
-	border: 1px solid blue;
 }
 .quote-form {
 	display: flex;
@@ -28,7 +26,7 @@
 }
 .container > input {
 	width: 100%;
-	margin: 0 auto 1.5em auto;
+	margin: 0.15em auto 1.5em auto;
 	font-size: 1rem;
 }
 .btn {
@@ -38,6 +36,10 @@
 /* -------------------------------------------------- */
 
 /* --------------- Styling/Typography --------------- */
+.main-quote-content {
+	background-image: url("../pictures/mooserestorationbackground.jpg");
+	background-size: cover;
+}
 .container > h1 {
 	font-weight: 700;
 	font-size: 1.5rem;
@@ -46,6 +48,7 @@
 .container {
 	box-shadow: 0px 4px 40px #4a4a4a;
 	border-radius: 40px;
+	background-color: #ffff;
 }
 .container > input {
 	font-family: "Roboto", sans-serif;
@@ -57,7 +60,7 @@
 }
 .container > label {
 	color: #4a4a4a;
-	font-family: "Roboto", sans-serif;
+	font-family: "Montserrat", sans-serif;
 }
 .btn {
 	display: block;
@@ -65,7 +68,7 @@
 	background-color: #f57f2a;
 	font-family: "Montserrat", sans-serif;
 	padding: 1em 2em;
-	border-radius: 20px;
+	border-radius: 500px;
 	letter-spacing: 0.5px;
 	color: #ffff;
 	cursor: pointer;
@@ -88,11 +91,14 @@
 /* ----------------- media queries ------------------ */
 
 @media (min-width: 768px) {
+	.container > h1 {
+		font-size: 2.5rem;
+	}
 	.main-quote-content {
 		min-height: 90vh;
 	}
 	.container > input {
-		padding: 0.5em 0.7em;
+		padding: 0.7em 1em;
 		border: solid 1.5px #4a4a4a;
 		box-shadow: 0px 2px 0px #2a2a2a;
 	}
@@ -100,6 +106,9 @@
 		border-color: #f57f2a;
 		outline: none;
 		box-shadow: 0 0 2px #f57f2a;
+	}
+	.btn {
+		padding: 1.5em 3em;
 	}
 }
 
