@@ -1,0 +1,11 @@
+.slideshow-slider {
+	white-space: nowrap;
+}
+.current-slide {
+	max-width: 350px;
+	overflow: hidden;
+}
+.slide {
+	display: inline-block;
+	width: 100%;
+}
