@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "../styling/Before.css";
 import image1 from "../pictures/slideshowimage1.jpg";
 import image2 from "../pictures/slideshowimage2.jpg";
@@ -6,16 +6,19 @@ import image2 from "../pictures/slideshowimage2.jpg";
 const images = [image1, image2, image1, image2];
 const delay = 2500;
 
-// function handleSlideButtonClick() {
-// 	setIndex();
-// }
-
-//TODO: fix issues with slideshow
 function Before() {
 	const [index, setIndex] = useState(0);
+	const timeoutRef = useRef(null);
+
+	function resetTimeout() {
+		if (timeoutRef.current) {
+			clearTimeout(timeoutRef.current);
+		}
+	}
 
 	useEffect(() => {
-		setTimeout(
+		resetTimeout();
+		timeoutRef.current = setTimeout(
 			() =>
 				setIndex((prevIndex) =>
 					prevIndex === images.length - 1 ? 0 : prevIndex + 1
@@ -23,7 +26,9 @@ function Before() {
 			delay
 		);
 
-		return () => {};
+		return () => {
+			resetTimeout();
+		};
 	}, [index]);
 
 	return (
