@@ -1,7 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+/*
+	------
+	Layout
+	------
+*/
+.slideshow-title {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.slideshow-title > h2 {
+	padding: 0;
+	margin: 0;
+}
+.container-before {
+	width: 100%;
+	min-height: 70vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
 .slideshow-slider {
 	max-width: 350px;
 	overflow: hidden;
-	margin: 0 auto;
 }
 .current-slide {
 	white-space: nowrap;
@@ -14,21 +36,46 @@
 	display: inline-block;
 	width: 100%;
 }
-.dot-container {
-	/* background-color: aquamarine; */
+.dot {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	margin: 0;
 }
-.dot-container * {
+.dot * {
 	margin: 0 0.5em;
 	width: 10px;
 	height: 10px;
-	background-color: #d0d0d0;
 	border-radius: 20px;
 }
-.dot-container *:hover {
+.dot *:hover {
 	cursor: pointer;
+}
+
+@media (min-width: 768px) {
+	.slideshow-slider {
+		max-width: 862px;
+	}
+	.current-slide {
+		max-width: 862px;
+	}
+	.container-before {
+		min-height: 90vh;
+	}
+}
+
+/*
+	------------------
+	styling/typography
+	------------------
+*/
+.slideshow-title > h2 {
+	font-weight: 300;
+	color: #4a4a4a;
+	font-family: "Montserrat" sans-serif;
+}
+.dot * {
+	background-color: #d0d0d0;
 }
 .dot.active {
 	background-color: #f57f2a;

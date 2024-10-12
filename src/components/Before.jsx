@@ -33,23 +33,32 @@ function Before() {
 
 	return (
 		<>
-			<div className="slideshow-slider">
-				<div
-					className="current-slide"
-					style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
-				>
-					{images.map((picture, idx) => (
-						<img className="slide" key={idx} src={picture} />
-					))}
-				</div>
-				<div className="dot-container">
-					{images.map((_, idx) => (
-						<div
-							onClick={() => setIndex(idx)}
-							key={idx}
-							className={`dot ${index === idx ? "active" : ""}`}
-						></div>
-					))}
+			<div className="before-title-1">
+				<h1>Before / After</h1>
+			</div>
+			<div className="container-before">
+				<div className="slideshow-slider">
+					<div className="slideshow-title">
+						<h2>Before</h2>
+						<h2>After</h2>
+					</div>
+					<div
+						className="current-slide"
+						style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
+					>
+						{images.map((picture, idx) => (
+							<img className="slide" key={idx} src={picture} />
+						))}
+					</div>
+					<div className="dot">
+						{images.map((_, idx) => (
+							<div
+								onClick={() => setIndex(idx)}
+								key={idx}
+								className={`dot ${index === idx ? "active" : ""}`}
+							></div>
+						))}
+					</div>
 				</div>
 			</div>
 		</>

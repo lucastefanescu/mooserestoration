@@ -48,10 +48,10 @@ li {
 /*
 	------------------
 	styling/typography
+	------------------
 */
 .nav-list {
 	list-style-type: none;
-
 	font-family: "Montserrat", sans-serif;
 	font-size: 1.25rem;
 	font-weight: 300;
