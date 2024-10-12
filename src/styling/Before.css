@@ -4,6 +4,14 @@
 	Layout
 	------
 */
+.breaktitle {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+		url("../pictures/moosebackgroundimage.jpg");
+	padding: 1.25em;
+}
 .slideshow-title {
 	display: flex;
 	flex-direction: row;
@@ -69,14 +77,40 @@
 	styling/typography
 	------------------
 */
+.before-title-1 > h1 {
+	/* letter-spacing: 0.1em; */
+}
+.breaktitle > h1 {
+	font-family: Montserrat;
+	color: #fff;
+	font-weight: 300;
+}
 .slideshow-title > h2 {
 	font-weight: 300;
 	color: #4a4a4a;
-	font-family: "Montserrat" sans-serif;
 }
 .dot * {
 	background-color: #d0d0d0;
 }
 .dot.active {
 	background-color: #f57f2a;
+}
+.bark-link::after {
+	content: "";
+	left: 0;
+	bottom: 0;
+	position: absolute;
+	height: 2px;
+	width: 0;
+	transition: width 0.3s ease;
+	background-color: #f57f2a;
+}
+.bark-link:hover::after {
+	width: 100%;
+}
+.bark-link,
+.bark-link:visited,
+.bark-link:link {
+	color: #f57f2a;
+	position: relative;
 }

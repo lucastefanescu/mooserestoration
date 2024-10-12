@@ -33,8 +33,8 @@ function Before() {
 
 	return (
 		<>
-			<div className="before-title-1">
-				<h1>Before / After</h1>
+			<div className="breaktitle before-title-1">
+				<h1>REVIEWS</h1>
 			</div>
 			<div className="container-before">
 				<div className="slideshow-slider">
@@ -60,6 +60,14 @@ function Before() {
 						))}
 					</div>
 				</div>
+			</div>
+			<div className="breaktitle before-title-2">
+				<h1>
+					More Reviews on{" "}
+					<a href="#" className="bark-link">
+						Bark
+					</a>
+				</h1>
 			</div>
 		</>
 	);
