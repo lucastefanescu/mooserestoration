@@ -2,7 +2,39 @@ import React, { useEffect, useState, useRef } from "react";
 import "../styling/Before.css";
 import image1 from "../pictures/slideshowimage1.jpg";
 import image2 from "../pictures/slideshowimage2.jpg";
+import leftarrowpicture from "../pictures/mooserestorationleftarrow.png";
+import rightarrowpicture from "../pictures/mooserestorationrightarrow.png";
 
+const reviews = [
+	{
+		title: "Chimney Repair",
+		review: "Moose Restoration",
+		// "crumbling chimney. The team was professional, punctual, and left no mess behind. They thoroughly explained the process and completed the work quickly and efficiently." +
+		// "Our chimney looks brand new, and we feel much safer using our fireplace. Highly recommend Moose Restoration for any home repairs – they truly go above and beyond!",
+		name: "-Melanie C",
+	},
+	{
+		title: "Chimney Repair",
+		review: "Moose Restoration",
+		// "crumbling chimney. The team was professional, punctual, and left no mess behind. They thoroughly explained the process and completed the work quickly and efficiently." +
+		// "Our chimney looks brand new, and we feel much safer using our fireplace. Highly recommend Moose Restoration for any home repairs – they truly go above and beyond!",
+		name: "-Melanie D",
+	},
+	{
+		title: "Chimney Repair",
+		review: "Moose Restoration",
+		// "crumbling chimney. The team was professional, punctual, and left no mess behind. They thoroughly explained the process and completed the work quickly and efficiently." +
+		// "Our chimney looks brand new, and we feel much safer using our fireplace. Highly recommend Moose Restoration for any home repairs – they truly go above and beyond!",
+		name: "-Melanie E",
+	},
+	{
+		title: "Chimney Repair",
+		review: "Moose Restoration",
+		// "crumbling chimney. The team was professional, punctual, and left no mess behind. They thoroughly explained the process and completed the work quickly and efficiently." +
+		// "Our chimney looks brand new, and we feel much safer using our fireplace. Highly recommend Moose Restoration for any home repairs – they truly go above and beyond!",
+		name: "-Melanie F",
+	},
+];
 const images = [image1, image2, image1, image2];
 const delay = 2500;
 
@@ -68,6 +100,34 @@ function Before() {
 						Bark
 					</a>
 				</h1>
+			</div>
+			<div className="text-reviews">
+				<div className="slideshow-slider-reviews-container">
+					<div className="slideshow-slider-reviews">
+						<div
+							style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
+							className="current-slide-reviews"
+						>
+							{reviews.map((review, idx) => {
+								return (
+									<div className="slide-review">
+										<h3>{review.title}</h3>
+										<p>{review.review}</p>
+										<p>{review.name}</p>
+									</div>
+								);
+							})}
+						</div>
+					</div>
+					<div className="arrow-container">
+						<div className="arrow left">
+							<img src={leftarrowpicture} />
+						</div>
+						<div className="arrow right">
+							<img src={rightarrowpicture} />
+						</div>
+					</div>
+				</div>
 			</div>
 		</>
 	);
