@@ -2,8 +2,8 @@ import React, { useEffect, useState, useRef } from "react";
 import "../styling/Before.css";
 import image1 from "../pictures/slideshowimage1.jpg";
 import image2 from "../pictures/slideshowimage2.jpg";
-import leftarrowpicture from "../pictures/mooserestorationleftarrow.png";
-import rightarrowpicture from "../pictures/mooserestorationrightarrow.png";
+import leftarrowpicture from "../pictures/back.png";
+import rightarrowpicture from "../pictures/next.png";
 
 const reviews = [
 	{
@@ -120,11 +120,21 @@ function Before() {
 						</div>
 					</div>
 					<div className="arrow-container">
-						<div className="arrow left">
+						<div
+							className="arrow left"
+							onClick={() => {
+								setIndex(index === 0 ? images.length - 1 : index - 1);
+							}}
+						>
 							<img src={leftarrowpicture} />
 						</div>
 						<div className="arrow right">
-							<img src={rightarrowpicture} />
+							<img
+								src={rightarrowpicture}
+								onClick={() => {
+									setIndex(index === images.length - 1 ? 0 : index + 1);
+								}}
+							/>
 						</div>
 					</div>
 				</div>

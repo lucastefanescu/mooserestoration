@@ -8,7 +8,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
 		url("../pictures/moosebackgroundimage.jpg");
 	padding: 1.25em;
 }
@@ -43,15 +43,19 @@
 	display: flex;
 	justify-content: center;
 }
-.arrow > img {
-	height: 20px;
-}
 .arrow {
-	padding: 0.5em;
-	border: solid 1px;
+	margin: 0 1em;
+	border-radius: 50%;
+	height: 30px;
+	width: 30px;
 	display: flex;
-	justify-content: center;
 	align-items: center;
+	justify-content: center;
+	border: solid 0.5px #4a4a4a;
+}
+.arrow > img {
+	margin: auto;
+	height: 10px;
 }
 /*
 	-----------------
@@ -113,6 +117,7 @@
 */
 @media (min-width: 900px) {
 	.slideshow-slider {
+		width: 80%;
 		max-width: 862px;
 	}
 	.current-slide {
@@ -162,4 +167,14 @@
 .bark-link:link {
 	color: #f57f2a;
 	position: relative;
+}
+
+.arrow {
+	transform: scale(1);
+}
+.arrow:hover,
+.arrow:focus {
+	transform: scale(1.2);
+	transition: transform 250ms;
+	cursor: pointer;
 }
