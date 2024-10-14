@@ -128,13 +128,13 @@ function Before() {
 						>
 							<img src={leftarrowpicture} />
 						</div>
-						<div className="arrow right">
-							<img
-								src={rightarrowpicture}
-								onClick={() => {
-									setIndex(index === images.length - 1 ? 0 : index + 1);
-								}}
-							/>
+						<div
+							className="arrow right"
+							onClick={() => {
+								setIndex(index === images.length - 1 ? 0 : index + 1);
+							}}
+						>
+							<img src={rightarrowpicture} />
 						</div>
 					</div>
 				</div>
