@@ -21,9 +21,10 @@
 	border-radius: 50px;
 	padding: 2em;
 }
+
 .slideshow-slider-reviews {
-	max-width: 350px;
 	overflow: hidden;
+	max-width: 350px;
 }
 .current-slide-reviews {
 	white-space: nowrap;
@@ -33,6 +34,10 @@
 	display: inline-block;
 	width: 100%;
 }
+.review-text {
+	white-space: Normal;
+}
+
 .text-reviews {
 	display: flex;
 	justify-content: center;

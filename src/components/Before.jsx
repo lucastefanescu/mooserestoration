@@ -8,30 +8,26 @@ import rightarrowpicture from "../pictures/next.png";
 const reviews = [
 	{
 		title: "Chimney Repair",
-		review: "Moose Restoration",
-		// "crumbling chimney. The team was professional, punctual, and left no mess behind. They thoroughly explained the process and completed the work quickly and efficiently." +
-		// "Our chimney looks brand new, and we feel much safer using our fireplace. Highly recommend Moose Restoration for any home repairs – they truly go above and beyond!",
+		review:
+			"Moose Restoration did an amazing job on my chimney. The transformation is impressive, and the whole process was smooth and professional. Highly recommend!",
 		name: "-Melanie C",
 	},
 	{
 		title: "Chimney Repair",
-		review: "Moose Restoration",
-		// "crumbling chimney. The team was professional, punctual, and left no mess behind. They thoroughly explained the process and completed the work quickly and efficiently." +
-		// "Our chimney looks brand new, and we feel much safer using our fireplace. Highly recommend Moose Restoration for any home repairs – they truly go above and beyond!",
+		review:
+			"Moose Restoration did an amazing job on my chimney. The transformation is impressive, and the whole process was smooth and professional. Highly recommend!",
 		name: "-Melanie D",
 	},
 	{
 		title: "Chimney Repair",
-		review: "Moose Restoration",
-		// "crumbling chimney. The team was professional, punctual, and left no mess behind. They thoroughly explained the process and completed the work quickly and efficiently." +
-		// "Our chimney looks brand new, and we feel much safer using our fireplace. Highly recommend Moose Restoration for any home repairs – they truly go above and beyond!",
+		review:
+			"Moose Restoration did an amazing job on my chimney. The transformation is impressive, and the whole process was smooth and professional. Highly recommend!",
 		name: "-Melanie E",
 	},
 	{
 		title: "Chimney Repair",
-		review: "Moose Restoration",
-		// "crumbling chimney. The team was professional, punctual, and left no mess behind. They thoroughly explained the process and completed the work quickly and efficiently." +
-		// "Our chimney looks brand new, and we feel much safer using our fireplace. Highly recommend Moose Restoration for any home repairs – they truly go above and beyond!",
+		review:
+			"Moose Restoration did an amazing job on my chimney. The transformation is impressive, and the whole process was smooth and professional. Highly recommend!",
 		name: "-Melanie F",
 	},
 ];
@@ -110,15 +106,16 @@ function Before() {
 						>
 							{reviews.map((review, idx) => {
 								return (
-									<div className="slide-review">
+									<div className="slide-review" key={idx}>
 										<h3>{review.title}</h3>
-										<p>{review.review}</p>
+										<p className="review-text">{review.review}</p>
 										<p>{review.name}</p>
 									</div>
 								);
 							})}
 						</div>
 					</div>
+
 					<div className="arrow-container">
 						<div
 							className="arrow left"
