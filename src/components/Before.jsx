@@ -8,31 +8,31 @@ import rightarrowpicture from "../pictures/next.png";
 const reviews = [
 	{
 		title: "Chimney Repair",
-		review:
-			"Moose Restoration did an amazing job on my chimney. The transformation is impressive, and the whole process was smooth and professional. Highly recommend!",
-		name: "-Melanie C",
+		review: "My range rover is missing",
+		// "Moose Restoration expertly repaired our crumbling chimney, working quickly, efficiently, and leaving no mess. The team was professional, explained everything clearly, and made our chimney look brand new. Highly recommend for any home repairs!",
+		name: "-John C",
 	},
 	{
 		title: "Chimney Repair",
 		review:
-			"Moose Restoration did an amazing job on my chimney. The transformation is impressive, and the whole process was smooth and professional. Highly recommend!",
-		name: "-Melanie D",
+			"Moose Restoration expertly repaired our crumbling chimney, working quickly, efficiently, and leaving no mess. ",
+		name: "-James D",
 	},
 	{
 		title: "Chimney Repair",
 		review:
-			"Moose Restoration did an amazing job on my chimney. The transformation is impressive, and the whole process was smooth and professional. Highly recommend!",
-		name: "-Melanie E",
+			"Moose Restoration expertly repaired our crumbling chimney, working quickly, efficiently, and leaving no mess. ",
+		name: "-Joseph E",
 	},
 	{
 		title: "Chimney Repair",
 		review:
-			"Moose Restoration did an amazing job on my chimney. The transformation is impressive, and the whole process was smooth and professional. Highly recommend!",
-		name: "-Melanie F",
+			"Moose Restoration expertly repaired our crumbling chimney, working quickly, efficiently, and leaving no mess. ",
+		name: "-Mark F",
 	},
 ];
 const images = [image1, image2, image1, image2];
-const delay = 2500;
+const delay = 3500;
 
 function Before() {
 	const [index, setIndex] = useState(0);
@@ -101,15 +101,18 @@ function Before() {
 				<div className="slideshow-slider-reviews-container">
 					<div className="slideshow-slider-reviews">
 						<div
-							style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
+							style={{ transform: `translateX(${-index * 100}%)` }}
 							className="current-slide-reviews"
 						>
 							{reviews.map((review, idx) => {
 								return (
-									<div className="slide-review" key={idx}>
-										<h3>{review.title}</h3>
+									<div
+										className={`slide-review ${index === idx ? "active" : ""}`}
+										key={idx}
+									>
+										<h3 className="review-title">{review.title}</h3>
 										<p className="review-text">{review.review}</p>
-										<p>{review.name}</p>
+										<p className="reviewer-name">{review.name}</p>
 									</div>
 								);
 							})}
