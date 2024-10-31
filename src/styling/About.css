@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+/*
+=========
+Layout
+=========
+*/
+.about-container {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+		url("../pictures/moosebackgroundimage.jpg");
+	background-position: left center;
+	background-attachment: fixed;
+}
+
+.about-cards,
+.about-cards-container {
+	display: flex;
+}
+.about-cards-container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+.about-cards {
+	width: 80%;
+	max-width: 1200px;
+	text-align: center;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+.about-me-card > img {
+	width: 80%;
+}
+.about-me-card > h2 {
+	margin-top: 0;
+	margin-bottom: 0.5em;
+	padding: 0;
+}
+.about-me-card {
+	width: 100%;
+	padding: 1em 0 1.5em 0;
+	margin: 2em 0em;
+	max-width: 320px;
+}
+
+@media (min-width: 800px) {
+	.about-me-card {
+		margin: 2em 1em;
+	}
+}
+/*
+=========
+*/
+
+/*
+=========
+styling/typography
+=========
+*/
+
+.breaktitle.services-title > h1 {
+	font-weight: 600;
+}
+
+.about-me-card {
+	background-color: #f2f2f2;
+}
+
+.about-me-card > h2 {
+	font-size: 1.5rem;
+	color: #4a4a4a;
+	font-family: Montserrat;
+	font-weight: 300;
+}
+.about-cards-container {
+	background-color: #fff;
+}

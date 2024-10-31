@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/* --------------- layout --------------- */
+.container > h1 {
+	padding: 0;
+	text-align: left;
+}
+.container {
+	max-width: 800px;
+	padding: 2em;
+	margin: 0 auto;
+}
+
+form {
+	padding: 2em 0em;
+}
+
+.main-quote-content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 70vh;
+}
+.quote-form {
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	/* margin: 0 auto; */
+}
+.container > input {
+	width: 100%;
+	margin: 0.15em auto 1.5em auto;
+	font-size: 1rem;
+}
+.btn {
+	margin: 1em auto;
+}
+
+/* -------------------------------------------------- */
+
+/* --------------- Styling/Typography --------------- */
+.main-quote-content {
+	background-image: url("../pictures/mooserestorationbackground.jpg");
+	background-size: cover;
+}
+.container > h1 {
+	font-weight: 700;
+	font-size: 1.5rem;
+	font-family: "Montserrat", sans-serif;
+}
+.container {
+	box-shadow: 0px 4px 40px #4a4a4a;
+	border-radius: 40px;
+	background-color: #ffff;
+}
+.container > input {
+	font-family: "Roboto", sans-serif;
+	color: #4a4a4a;
+	border: solid 1.5px #4a4a4a;
+	box-shadow: 0px 1px 0px #2a2a2a;
+	border-radius: 4px;
+	padding: 0.5em;
+}
+.container > label {
+	color: #4a4a4a;
+	font-family: "Montserrat", sans-serif;
+}
+.btn {
+	display: block;
+	border: 0;
+	background-color: #f57f2a;
+	font-family: "Montserrat", sans-serif;
+	padding: 1em 2em;
+	border-radius: 500px;
+	letter-spacing: 0.5px;
+	color: #ffff;
+	cursor: pointer;
+	transform: scale(1);
+	transition: transform 250ms;
+}
+.btn:focus,
+.btn:hover {
+	transform: scale(1.1);
+	background-color: #2a2a2a;
+}
+.container > input:focus {
+	border-color: #f57f2a;
+	outline: none;
+	box-shadow: 0 0 2px #f57f2a;
+}
+
+/* -------------------------------------------------- */
+
+/* ----------------- media queries ------------------ */
+
+@media (min-width: 768px) {
+	.container > h1 {
+		font-size: 2.5rem;
+	}
+	.main-quote-content {
+		min-height: 90vh;
+	}
+	.container > input {
+		padding: 0.7em 1em;
+		border: solid 1.5px #4a4a4a;
+		box-shadow: 0px 2px 0px #2a2a2a;
+	}
+	.container > input:focus {
+		border-color: #f57f2a;
+		outline: none;
+		box-shadow: 0 0 2px #f57f2a;
+	}
+	.btn {
+		padding: 1.5em 3em;
+	}
+}
+
+/* ------------------------------------------------------ */

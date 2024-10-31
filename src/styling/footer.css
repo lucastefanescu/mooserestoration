@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/*
+=========
+Layout
+=========
+*/
+.footer-content > a {
+	margin: 1em 0;
+}
+.footer-content.instagram > a {
+	margin-left: 0.3em;
+}
+.footer-content.mail > a {
+	margin-left: 0.2em;
+}
+.footer-container > h1 {
+	text-align: center;
+	margin: 0.5em 0;
+}
+.footer-container,
+.footer-content {
+	display: flex;
+}
+
+.footer-content.mail > img {
+	height: 26px;
+}
+
+.footer-content.instagram > img {
+	height: 24px;
+}
+.footer-content.phone > img {
+	height: 32px;
+}
+
+.footer-content {
+	justify-content: center;
+	align-items: center;
+}
+
+.footer-container {
+	flex-direction: column;
+}
+.footer-content.instagram {
+	margin-bottom: 0.8em;
+}
+
+/*
+=============
+styling/typography
+=============
+*/
+.footer-container > h1,
+.footer-content > a {
+	font-family: Montserrat;
+}
+
+.footer-content > a {
+	font-weight: 300;
+	font-size: 1.25rem;
+	color: #ffff;
+}
+
+.footer-container > h1 {
+	font-weight: 300;
+	font-size: 2.5rem;
+}
+.footer-content > a > span {
+	color: #f57f2a;
+}
