@@ -1,15 +1,47 @@
 import "../styling/Quote.css";
+import ModalAcceptIcon from "../pictures/ModalAcceptIcon.svg";
+import ModalRejectIcon from "../pictures/ModalRejectIcon.svg";
+
 import React, { useState } from "react";
 
-function Modal() {}
+function ModalReject() {
+	return (
+		<>
+			<div className="modal-container Reject">
+				<img src={ModalRejectIcon} />
+				<h1 className="Modal-Title Reject">Uh Oh..</h1>
+				<p className="Modal-message Reject">
+					Something went wrong. Please try again or call us at (647) 803-5849.
+				</p>
+				<button class="Modal-Button Reject">Close</button>
+			</div>
+		</>
+	);
+}
+
+function ModalAccept() {
+	return (
+		<>
+			<div className="modal-container Accept">
+				<img src={ModalAcceptIcon} />
+				<h1 className="Modal-Title Accept">Thank You</h1>
+				<p className="Modal-message Accept">
+					Our team will reach out to you within the next 24 hours.
+				</p>
+				<button class="Modal-Button Accept">Close</button>
+			</div>
+		</>
+	);
+}
 
 function Quote() {
-	const [modalVisibility, setModalVisibility] = useState(false);
+	const [modalAcceptVisibility, setModalRejectVisibility] = useState(false);
+	const [modalRejectVisibility, setModalAcceptVisibility] = useState(false);
 	const [buttonDisabled, setDisabled] = useState(false);
 
 	function handleSubmit(e) {
 		e.preventDefault();
-
+		setDisabled(true);
 		const formData = {
 			name: e.target.name.value,
 			email: e.target.email.value,
@@ -26,13 +58,18 @@ function Quote() {
 		})
 			.then((response) => {
 				if (response.ok) {
-					console.log("blessed");
-					setModalVisibility(true);
+					setModalAcceptVisibility(true);
+					setDisabled(false);
 				} else {
-					console.log("not blessed");
+					setModalRejectVisibility(true);
+					setDisabled(false);
 				}
 			})
-			.catch((err) => console.log(err));
+			.catch((err) => {
+				setModalAcceptVisibility(true);
+				console.log(err);
+				setDisabled(false);
+			});
 	}
 	return (
 		<>
@@ -61,13 +98,28 @@ function Quote() {
 							id="description"
 							placeholder="Enter job description"
 						></input>
-						<button type="submit" className="btn">
+						<button
+							type="submit"
+							className={`btn ${buttonDisabled === true ? "disabled" : ""}`}
+							disabled={buttonDisabled === true}
+						>
 							SUBMIT
 						</button>
 					</div>
 				</form>
+				{modalAcceptVisibility && (
+					<>
+						<div className="modal-overlay"></div>
+						<ModalAccept />
+					</>
+				)}
+				{modalRejectVisibility && (
+					<>
+						<div className="modal-overlay"></div>
+						<ModalReject />
+					</>
+				)}
 			</div>
-			{modalVisibility && <Modal />}
 		</>
 	);
 }
