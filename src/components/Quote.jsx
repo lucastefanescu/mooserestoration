@@ -4,7 +4,7 @@ import ModalRejectIcon from "../pictures/ModalRejectIcon.svg";
 
 import React, { useState } from "react";
 
-function ModalReject() {
+function ModalReject({ setModalRejectVisibility }) {
 	return (
 		<>
 			<div className="modal-container Reject">
@@ -13,13 +13,18 @@ function ModalReject() {
 				<p className="Modal-message Reject">
 					Something went wrong. Please try again or call us at (647) 803-5849.
 				</p>
-				<button class="Modal-Button Reject">Close</button>
+				<button
+					onClick={() => setModalRejectVisibility(false)}
+					class="Modal-Button Reject"
+				>
+					CLOSE
+				</button>
 			</div>
 		</>
 	);
 }
 
-function ModalAccept() {
+function ModalAccept({ setModalAcceptVisibility }) {
 	return (
 		<>
 			<div className="modal-container Accept">
@@ -28,15 +33,20 @@ function ModalAccept() {
 				<p className="Modal-message Accept">
 					Our team will reach out to you within the next 24 hours.
 				</p>
-				<button class="Modal-Button Accept">Close</button>
+				<button
+					onClick={() => setModalAcceptVisibility(false)}
+					class="Modal-Button Accept"
+				>
+					Close
+				</button>
 			</div>
 		</>
 	);
 }
 
 function Quote() {
-	const [modalAcceptVisibility, setModalRejectVisibility] = useState(false);
-	const [modalRejectVisibility, setModalAcceptVisibility] = useState(false);
+	const [modalAcceptVisibility, setModalAcceptVisibility] = useState(false);
+	const [modalRejectVisibility, setModalRejectVisibility] = useState(false);
 	const [buttonDisabled, setDisabled] = useState(false);
 
 	function handleSubmit(e) {
@@ -66,7 +76,7 @@ function Quote() {
 				}
 			})
 			.catch((err) => {
-				setModalAcceptVisibility(true);
+				setModalRejectVisibility(true);
 				console.log(err);
 				setDisabled(false);
 			});
@@ -110,13 +120,13 @@ function Quote() {
 				{modalAcceptVisibility && (
 					<>
 						<div className="modal-overlay"></div>
-						<ModalAccept />
+						<ModalAccept setModalAcceptVisibility={setModalAcceptVisibility} />
 					</>
 				)}
 				{modalRejectVisibility && (
 					<>
 						<div className="modal-overlay"></div>
-						<ModalReject />
+						<ModalReject setModalRejectVisibility={setModalRejectVisibility} />
 					</>
 				)}
 			</div>
