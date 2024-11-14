@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import "../styling/Before.css";
 import image1 from "../pictures/slideshowimage1.jpg";
 import image2 from "../pictures/slideshowimage2.jpg";
+import stars from "../pictures/5starsmooserestoration.svg";
 import leftarrowpicture from "../pictures/back.png";
 import rightarrowpicture from "../pictures/next.png";
 import Footer from "./Footer";
@@ -81,7 +82,8 @@ function TextSlideshow({ index, setIndex }) {
 										className={`slide-review ${index === idx ? "active" : ""}`}
 										key={idx}
 									>
-										<h3 className="review-title">{review.title}</h3>
+										<img src={stars} />
+										{/* <h3 className="review-title">{review.title}</h3> */}
 										<p className="review-text">{review.review}</p>
 										<p className="reviewer-name">{review.name}</p>
 									</div>
