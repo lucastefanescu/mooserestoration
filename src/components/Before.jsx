@@ -9,7 +9,7 @@ import Footer from "./Footer";
 const reviews = [
 	{
 		title: "Chimney Repair",
-		review: "My range rover is missing",
+		review: "Excellent Job done by moose restoration",
 		name: "-John C",
 	},
 	{

@@ -2,12 +2,20 @@ import "../styling/Quote.css";
 import ModalAcceptIcon from "../pictures/ModalAcceptIcon.svg";
 import ModalRejectIcon from "../pictures/ModalRejectIcon.svg";
 
-import React, { useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 
 function ModalReject({ setModalRejectVisibility }) {
+	const dialogRef = useRef(null);
+
+	useEffect(() => {
+		if (dialogRef.current) {
+			dialogRef.current.showModal();
+		}
+	}, []);
+
 	return (
 		<>
-			<div className="modal-container Reject">
+			<dialog ref={dialogRef} className="modal-container Reject">
 				<img src={ModalRejectIcon} />
 				<h1 className="Modal-Title Reject">Uh Oh..</h1>
 				<p className="Modal-message Reject">
@@ -19,15 +27,23 @@ function ModalReject({ setModalRejectVisibility }) {
 				>
 					CLOSE
 				</button>
-			</div>
+			</dialog>
 		</>
 	);
 }
 
 function ModalAccept({ setModalAcceptVisibility }) {
+	const dialogRef = useRef(null);
+
+	useEffect(() => {
+		if (dialogRef.current) {
+			dialogRef.current.showModal();
+		}
+	}, []);
+
 	return (
 		<>
-			<div className="modal-container Accept">
+			<dialog ref={dialogRef} className="modal-container Accept">
 				<img src={ModalAcceptIcon} />
 				<h1 className="Modal-Title Accept">Thank You</h1>
 				<p className="Modal-message Accept">
@@ -39,7 +55,7 @@ function ModalAccept({ setModalAcceptVisibility }) {
 				>
 					Close
 				</button>
-			</div>
+			</dialog>
 		</>
 	);
 }
@@ -118,16 +134,10 @@ function Quote() {
 					</div>
 				</form>
 				{modalAcceptVisibility && (
-					<>
-						<div className="modal-overlay"></div>
-						<ModalAccept setModalAcceptVisibility={setModalAcceptVisibility} />
-					</>
+					<ModalAccept setModalAcceptVisibility={setModalAcceptVisibility} />
 				)}
 				{modalRejectVisibility && (
-					<>
-						<div className="modal-overlay"></div>
-						<ModalReject setModalRejectVisibility={setModalRejectVisibility} />
-					</>
+					<ModalReject setModalRejectVisibility={setModalRejectVisibility} />
 				)}
 			</div>
 		</>
