@@ -22,13 +22,12 @@ const reviews = [
 	{
 		title: "Chimney Repair",
 		review:
-			"Moose Restoration expertly repaired our crumbling chimney, working quickly, efficiently, and leaving no mess. ",
+			"After a storm damaged our roof, Moose Restoration fixed it flawlessly, ensuring everything was sturdy and weatherproof again. ",
 		name: "-Joseph E",
 	},
 	{
 		title: "Chimney Repair",
-		review:
-			"Moose Restoration expertly repaired our crumbling chimney, working quickly, efficiently, and leaving no mess. ",
+		review: "Outstanding work by Moose Restoration!",
 		name: "-Mark F",
 	},
 ];
