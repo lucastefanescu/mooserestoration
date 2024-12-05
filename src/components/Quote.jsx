@@ -84,6 +84,7 @@ function Quote() {
 	const apiUrl = process.env.REACT_APP_API_URL;
 
 	function handleSubmit(e) {
+		console.log("API URL:", process.env.REACT_APP_API_URL);
 		e.preventDefault();
 		setDisabled(true);
 		const formData = {
@@ -93,7 +94,7 @@ function Quote() {
 			description: e.target.elements.description.value,
 		};
 
-		fetch(`${apiUrl}/quote`, {
+		fetch(`${apiUrl}quote`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
