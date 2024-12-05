@@ -97,11 +97,7 @@
 	transform: translateY(15px);
 	transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
-.slide-review > img {
-	transform: none;
-	transition: none;
-	width: 7.5em;
-}
+
 .slide-review.active {
 	opacity: 1;
 	transform: translateY(0);
@@ -181,6 +177,10 @@
 	------------------
 */
 
+.slide-review > img {
+	width: 7.5em;
+}
+
 .breaktitle > h1,
 .slideshow-title > h2 {
 	font-weight: 300;
@@ -256,7 +256,6 @@
 		font-size: 1.5rem;
 	}
 	.reviewer-name,
-	.review-title,
 	.slideshow-title {
 		font-size: 1.25rem;
 	}

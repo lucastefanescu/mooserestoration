@@ -82,7 +82,7 @@ function TextSlideshow({ index, setIndex }) {
 										className={`slide-review ${index === idx ? "active" : ""}`}
 										key={idx}
 									>
-										<img src={stars} />
+										<img className="stars-img-text-review" src={stars} />
 										{/* <h3 className="review-title">{review.title}</h3> */}
 										<p className="review-text">{review.review}</p>
 										<p className="reviewer-name">{review.name}</p>

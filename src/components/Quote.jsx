@@ -11,6 +11,11 @@ function ModalReject({ setModalRejectVisibility }) {
 		if (dialogRef.current) {
 			dialogRef.current.showModal();
 		}
+		return () => {
+			if (dialogRef.current) {
+				dialogRef.current.close();
+			}
+		};
 	}, []);
 
 	return (
@@ -22,7 +27,12 @@ function ModalReject({ setModalRejectVisibility }) {
 					Something went wrong. Please try again or call us at (647) 803-5849.
 				</p>
 				<button
-					onClick={() => setModalRejectVisibility(false)}
+					onClick={() => {
+						setModalRejectVisibility(false);
+						// if (dialogRef.current) {
+						// 	dialogRef.current.close();
+						// }
+					}}
 					class="Modal-Button Reject"
 				>
 					CLOSE
@@ -33,24 +43,31 @@ function ModalReject({ setModalRejectVisibility }) {
 }
 
 function ModalAccept({ setModalAcceptVisibility }) {
-	const dialogRef = useRef(null);
+	const dialogRef2 = useRef(null);
 
 	useEffect(() => {
-		if (dialogRef.current) {
-			dialogRef.current.showModal();
+		if (dialogRef2.current) {
+			dialogRef2.current.showModal();
 		}
+		return () => {
+			if (dialogRef2.current) {
+				dialogRef2.current.close();
+			}
+		};
 	}, []);
 
 	return (
 		<>
-			<dialog ref={dialogRef} className="modal-container Accept">
+			<dialog ref={dialogRef2} className="modal-container Accept">
 				<img src={ModalAcceptIcon} />
 				<h1 className="Modal-Title Accept">Thank You</h1>
 				<p className="Modal-message Accept">
 					Our team will reach out to you within the next 24 hours.
 				</p>
 				<button
-					onClick={() => setModalAcceptVisibility(false)}
+					onClick={() => {
+						setModalAcceptVisibility(false);
+					}}
 					class="Modal-Button Accept"
 				>
 					Close
@@ -64,6 +81,7 @@ function Quote() {
 	const [modalAcceptVisibility, setModalAcceptVisibility] = useState(false);
 	const [modalRejectVisibility, setModalRejectVisibility] = useState(false);
 	const [buttonDisabled, setDisabled] = useState(false);
+	const apiUrl = process.env.REACT_APP_API_URL;
 
 	function handleSubmit(e) {
 		e.preventDefault();
@@ -75,7 +93,7 @@ function Quote() {
 			description: e.target.elements.description.value,
 		};
 
-		fetch("http://localhost:8080/quote", {
+		fetch(`${apiUrl}/quote`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
