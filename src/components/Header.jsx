@@ -9,7 +9,9 @@ function Header() {
 			<header className="main-header">
 				<div className="bottom-header">
 					<nav className="navigation">
-						<img src={logo} alt="Logo" className="logo"></img>
+						<Link to="/">
+							<img src={logo} alt="Logo" className="logo"></img>
+						</Link>
 						<ul className="nav-list">
 							<li className="nav-list-home">
 								<Link to="/">HOME</Link>
