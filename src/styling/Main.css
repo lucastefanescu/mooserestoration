@@ -89,7 +89,7 @@
 }
 .main-content {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
-		url("../pictures/moosebackgroundimage.jpg");
+		url("../pictures/moosebackgroundimage.webp");
 	background-position: bottom left;
 	background-size: cover;
 }
