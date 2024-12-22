@@ -84,7 +84,7 @@ dialog::backdrop {
 	color: black;
 }
 .main-quote-content {
-	background-image: url("../pictures/mooserestorationbackground.jpg");
+	background-image: url("../pictures/mooserestorationbackground.webp");
 	background-size: cover;
 }
 .container > h1 {
