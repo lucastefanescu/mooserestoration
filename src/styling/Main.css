@@ -10,6 +10,7 @@
 	min-height: 90vh;
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 }
 .main-content {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
@@ -19,12 +20,18 @@
 }
 
 .main-text {
-	margin: auto 2rem;
+	margin: 0 2em;
 	max-width: 550px;
+	padding: 0.5em 0.5em;
+	margin-top: -5rem;
 }
 
 .main-text > * {
 	margin: 0;
+}
+.main-text-three {
+	margin-top: 0.5em;
+	margin-bottom: 0.8em;
 }
 /*
 -----------------------
@@ -38,6 +45,9 @@
 	font-weight: 600;
 	padding: 0.6em 2.5875em;
 	border-radius: 0.45rem;
+}
+.main-text > button:hover {
+	cursor: pointer;
 }
 .main-text-one,
 .main-text-two,

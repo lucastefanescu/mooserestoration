@@ -1,7 +1,13 @@
 import "../styling/Header.css";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Main() {
+	const Navigate = useNavigate();
+	function handleQuoteClick() {
+		Navigate("/quote");
+	}
+
 	return (
 		<>
 			<div className="main-content">
@@ -14,7 +20,7 @@ function Main() {
 						At Moose Restoration, we specialize in transforming your spaces with
 						top-quality construction and restoration services.
 					</h3>
-					<button>GET A QUOTE</button>
+					<button onClick={handleQuoteClick}>GET A QUOTE</button>
 				</div>
 			</div>
 		</>
