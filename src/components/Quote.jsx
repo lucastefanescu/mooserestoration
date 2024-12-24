@@ -4,6 +4,42 @@ import ModalRejectIcon from "../pictures/ModalRejectIcon.svg";
 
 import React, { useRef, useState, useEffect } from "react";
 
+function ModalRejectInfo({ setModalRejectVisibilityInfo }) {
+	const dialogRef = useRef(null);
+
+	useEffect(() => {
+		if (dialogRef.current) {
+			dialogRef.current.showModal();
+		}
+		return () => {
+			if (dialogRef.current) {
+				dialogRef.current.close();
+			}
+		};
+	}, []);
+
+	return (
+		<>
+			<dialog ref={dialogRef} className="modal-container Reject Info">
+				<img src={ModalRejectIcon} />
+				<h1 className="Modal-Title Reject Info">Uh Oh..</h1>
+				<p className="Modal-message Reject Info">
+					The info you sent is incorrectly formatted or incomplete. Please fill
+					the form out properly and resubmit.
+				</p>
+				<button
+					onClick={() => {
+						setModalRejectVisibilityInfo(false);
+					}}
+					class="Modal-Button Reject Info"
+				>
+					CLOSE
+				</button>
+			</dialog>
+		</>
+	);
+}
+
 function ModalReject({ setModalRejectVisibility }) {
 	const dialogRef = useRef(null);
 
@@ -29,9 +65,6 @@ function ModalReject({ setModalRejectVisibility }) {
 				<button
 					onClick={() => {
 						setModalRejectVisibility(false);
-						// if (dialogRef.current) {
-						// 	dialogRef.current.close();
-						// }
 					}}
 					class="Modal-Button Reject"
 				>
@@ -80,6 +113,8 @@ function ModalAccept({ setModalAcceptVisibility }) {
 function Quote() {
 	const [modalAcceptVisibility, setModalAcceptVisibility] = useState(false);
 	const [modalRejectVisibility, setModalRejectVisibility] = useState(false);
+	const [modalRejectVisibilityInfo, setModalRejectVisibilityInfo] =
+		useState(false);
 	const [buttonDisabled, setDisabled] = useState(false);
 	const apiUrl = process.env.REACT_APP_API_URL;
 
@@ -104,6 +139,9 @@ function Quote() {
 			.then((response) => {
 				if (response.ok) {
 					setModalAcceptVisibility(true);
+					setDisabled(false);
+				} else if (response.status === 400) {
+					setModalRejectVisibilityInfo(true);
 					setDisabled(false);
 				} else {
 					setModalRejectVisibility(true);
@@ -157,6 +195,11 @@ function Quote() {
 				)}
 				{modalRejectVisibility && (
 					<ModalReject setModalRejectVisibility={setModalRejectVisibility} />
+				)}
+				{modalRejectVisibilityInfo && (
+					<ModalRejectInfo
+						setModalRejectVisibilityInfo={setModalRejectVisibilityInfo}
+					/>
 				)}
 			</div>
 		</>
