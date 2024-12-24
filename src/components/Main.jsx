@@ -1,23 +1,27 @@
 import "../styling/Header.css";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Main() {
+	const Navigate = useNavigate();
+	function handleQuoteClick() {
+		Navigate("/quote");
+	}
+
 	return (
 		<>
 			<div className="main-content">
-				<h1>MOOSE RESTORATION</h1>
-				<h2>Home Restoration Exceeding Your Expectations</h2>
-				<p>
-					At Moose Restoration, we specialize in reviving your spaces with
-					exceptional restoration services. Whether you're preserving historic
-					beauty, repairing damage, or refreshing your property's appeal, our
-					team is committed to delivering superior craftsmanship and meticulous
-					attention to detail. We take pride in restoring your vision, ensuring
-					every project is handled with care, completed on schedule, and
-					tailored to your needs. Trust Moose Restoration to breathe new life
-					into your spaces and make your restoration experience seamless and
-					satisfying.
-				</p>
+				<div className="main-text">
+					<h2 className="main-text-one">Moose Restoration</h2>
+					<h1 className="main-text-two">
+						HOME RESTORATION EXCEEDING YOUR EXPECTATIONS.
+					</h1>
+					<h3 className="main-text-three">
+						At Moose Restoration, we specialize in transforming your spaces with
+						top-quality construction and restoration services.
+					</h3>
+					<button onClick={handleQuoteClick}>GET A QUOTE</button>
+				</div>
 			</div>
 		</>
 	);
